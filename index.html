@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#08111f">
+  <title>Cyber Heist — Algorithmic Network Routing</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
+
+  <main id="startScreen" class="start-screen">
+    <div class="start-shell">
+      <header class="brand-row">
+        <div class="brand-mark"><span></span><span></span><span></span></div>
+        <div>
+          <div class="brand-name">NEXUS<span>/</span>OPS</div>
+          <div class="brand-caption">SECURE NETWORK SIMULATION</div>
+        </div>
+        <div class="offline-pill"><i></i> OFFLINE READY</div>
+      </header>
+
+      <section class="hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="eyebrow-line"></span> ANALYSIS OF ALGORITHMS // FIELD SIMULATION</div>
+          <h1>CYBER<br><span>HEIST</span><b class="title-cursor">_</b></h1>
+          <p class="hero-subtitle">Algorithmic Network Routing &amp; Resource Optimization</p>
+          <p class="hero-description">Infiltrate a secured network, recover high-value intelligence, and reach the vault before the trace catches you. Every move is a decision. Every resource has a cost.</p>
+          <div class="hero-actions">
+            <button id="startButton" class="button button-primary button-large"><span>INITIATE HEIST</span><b>↗</b></button>
+            <button id="howToButton" class="button button-quiet button-large">HOW TO PLAY <span class="button-plus">＋</span></button>
+          </div>
+          <div id="howToPanel" class="howto-panel" hidden>
+            <div class="howto-title">MISSION BRIEFING</div>
+            <div class="howto-grid">
+              <div><strong>01 / LOADOUT</strong><p>Choose data packets within the capacity limit, or run 0/1 Knapsack to find the highest-value combination.</p></div>
+              <div><strong>02 / ROUTE</strong><p>Select a network node. Dijkstra reveals the lowest-cost route, visited nodes, and edge weights.</p></div>
+              <div><strong>03 / EXFILTRATE</strong><p>Play the route or move one hop at a time. Collect selected packets, manage threat, then reach the vault.</p></div>
+            </div>
+          </div>
+          <div class="hero-footnote"><span class="pulse-dot"></span> LOCAL SIMULATION · NO NETWORK CONNECTION REQUIRED</div>
+        </div>
+
+        <div class="hero-visual" aria-label="Illustration of a connected cyber network">
+          <div class="visual-orbit orbit-a"></div>
+          <div class="visual-orbit orbit-b"></div>
+          <div class="visual-crosshair crosshair-one"></div>
+          <div class="visual-crosshair crosshair-two"></div>
+          <svg class="hero-network" viewBox="0 0 520 440" role="img" aria-label="Abstract network with a highlighted route">
+            <defs>
+              <linearGradient id="heroLine" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#42e7ef" stop-opacity=".15"/><stop offset="1" stop-color="#8b73ff" stop-opacity=".72"/></linearGradient>
+              <radialGradient id="heroCore"><stop stop-color="#42e7ef" stop-opacity=".28"/><stop offset="1" stop-color="#42e7ef" stop-opacity="0"/></radialGradient>
+            </defs>
+            <circle cx="260" cy="220" r="174" fill="url(#heroCore)"/>
+            <g class="hero-edges" fill="none" stroke="url(#heroLine)" stroke-width="1.4">
+              <path d="M72 210 157 95 265 66 375 126 455 225 370 343 250 380 130 315 72 210"/>
+              <path d="M157 95 185 220 130 315M265 66 285 190 375 126M285 190 455 225M185 220 285 190 370 343M185 220 72 210M285 190 250 380"/>
+              <path d="M157 95 285 190 370 343M130 315 285 190 375 126" stroke-dasharray="4 7"/>
+            </g>
+            <path class="hero-route" d="M72 210 157 95 265 66 285 190 370 343 455 225" fill="none" stroke="#42e7ef" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <g class="hero-nodes">
+              <circle cx="72" cy="210" r="7"/><circle cx="157" cy="95" r="7"/><circle cx="265" cy="66" r="7"/><circle cx="185" cy="220" r="7"/><circle cx="285" cy="190" r="9"/><circle cx="375" cy="126" r="7"/><circle cx="455" cy="225" r="9"/><circle cx="130" cy="315" r="7"/><circle cx="250" cy="380" r="7"/><circle cx="370" cy="343" r="7"/>
+            </g>
+            <g class="hero-labels" fill="#91a9c0" font-family="monospace" font-size="9"><text x="46" y="235">ENTRY_01</text><text x="394" y="111">RELAY_07</text><text x="412" y="250">VAULT_X</text><text x="296" y="174" fill="#42e7ef">CORE</text></g>
+          </svg>
+          <div class="visual-chip chip-top"><span class="chip-icon">⌁</span><div><small>NETWORK STATUS</small><strong>ENCRYPTED</strong></div></div>
+          <div class="visual-chip chip-bottom"><span class="chip-icon chip-icon-violet">⌘</span><div><small>ROUTE ENGINE</small><strong>DIJKSTRA // ONLINE</strong></div></div>
+          <div class="visual-coordinates">NODE MAP // 00:7F:AC</div>
+        </div>
+      </section>
+
+      <footer class="start-footer">
+        <span>CYBER HEIST <span class="muted-separator">/</span> BUILD 1.0</span>
+        <span>DIJKSTRA · 0/1 KNAPSACK · RESOURCE OPTIMIZATION</span>
+        <span>THREE OPERATIONS AWAIT</span>
+      </footer>
+    </div>
+  </main>
+
+  <main id="gameScreen" class="game-screen" hidden>
+    <header class="game-header">
+      <div class="header-brand">
+        <div class="mini-mark"><span></span><span></span><span></span></div>
+        <div><div class="header-title">CYBER<span>/</span>HEIST</div><div class="header-subtitle">NETWORK INFILTRATION SIMULATOR</div></div>
+      </div>
+      <div class="header-mission"><span class="live-dot"></span><span id="headerMission">OPERATION 01</span><span class="header-divider">/</span><span id="headerStatus">LOADOUT CONFIGURATION</span></div>
+      <div class="header-hud">
+        <div class="hud-stat"><span class="hud-label">SCORE</span><strong id="scoreValue">0000</strong></div>
+        <div class="hud-stat threat-stat"><span class="hud-label">TRACE LEVEL</span><strong id="threatValue">0%</strong></div>
+      </div>
+    </header>
+
+    <section class="mission-strip">
+      <div class="mission-heading"><span class="section-index">OP / <span id="levelNumber">01</span></span><div><h2 id="levelTitle">Ghost Protocol</h2><p id="levelDescription">Recover the encrypted fragments and access the vault.</p></div></div>
+      <div class="mission-progress-wrap"><div class="progress-labels"><span>MISSION PROGRESS</span><strong id="progressLabel">0 / 3 OBJECTIVES</strong></div><div class="progress-track"><div id="missionProgress" class="progress-fill"></div></div></div>
+      <div class="strip-capacity"><span class="capacity-icon">◈</span><div><small>DATA CAPACITY</small><strong id="capacityValue">0 / 6</strong></div></div>
+    </section>
+
+    <section class="workspace">
+      <div class="map-column">
+        <article class="panel map-panel">
+          <div class="panel-heading map-heading">
+            <div><div class="panel-kicker">LIVE TOPOLOGY <span class="tiny-pulse"></span></div><h3>Network map</h3></div>
+            <div class="map-heading-right"><span class="map-state" id="mapState">AWAITING LOADOUT</span><span class="map-coord">SECURE GRID // 01</span></div>
+          </div>
+          <div class="map-instructions"><span class="instruction-icon">⌖</span><span id="mapInstruction">Choose your data packets, then deploy to unlock the network.</span></div>
+          <div class="map-canvas" id="mapCanvas">
+            <div class="map-grid-overlay" aria-hidden="true"></div>
+            <svg id="networkMap" viewBox="0 0 800 500" role="img" aria-label="Interactive network map"></svg>
+            <div class="map-axis axis-top">Y / 00—99</div><div class="map-axis axis-bottom">X / 00—99</div>
+          </div>
+          <div class="map-footer">
+            <div class="legend"><span><i class="legend-dot legend-start"></i> ENTRY</span><span><i class="legend-dot legend-relay"></i> RELAY</span><span><i class="legend-dot legend-data"></i> DATA CACHE</span><span><i class="legend-dot legend-guard"></i> FIREWALL</span><span><i class="legend-dot legend-vault"></i> VAULT</span></div>
+            <div class="edge-readout" id="edgeInfo">Select a connection to inspect its weight.</div>
+          </div>
+        </article>
+
+        <div class="map-lower-grid">
+          <article class="panel routing-panel">
+            <div class="panel-heading compact-heading"><div><div class="panel-kicker">PATHFINDING ENGINE</div><h3>Dijkstra route analysis</h3></div><span class="algorithm-tag">O((V + E) log V)</span></div>
+            <div class="route-metrics">
+              <div class="route-metric"><small>PATH COST</small><strong id="routeCost">—</strong></div>
+              <div class="route-metric"><small>VISITED NODES</small><strong id="visitedCount">0</strong></div>
+              <div class="route-metric"><small>DESTINATION</small><strong id="destinationValue">—</strong></div>
+            </div>
+            <div class="route-detail"><div class="route-detail-label">VISITED ORDER</div><div id="visitedNodes" class="node-chip-row"><span class="empty-chip">Awaiting calculation</span></div></div>
+            <div class="route-detail"><div class="route-detail-label">SHORTEST PATH</div><div id="pathNodes" class="node-chip-row"><span class="empty-chip">Select a destination node</span></div></div>
+            <div id="routeMessage" class="route-message">Deploy your loadout to begin route planning.</div>
+          </article>
+
+          <article class="panel learning-panel">
+            <div class="panel-heading compact-heading"><div><div class="panel-kicker">ALGORITHM FIELD NOTES</div><h3 id="learningTitle">Mission logic</h3></div><span class="learning-icon">λ</span></div>
+            <p id="learningBody" class="learning-body">Two algorithms power this operation. Configure a loadout with 0/1 Knapsack, then use Dijkstra to navigate the network with minimum total edge weight.</p>
+            <div id="learningStats" class="learning-stats"><span>KNAPSACK <b>READY</b></span><span>DIJKSTRA <b>READY</b></span></div>
+          </article>
+        </div>
+      </div>
+
+      <aside class="side-column">
+        <article class="panel objectives-panel">
+          <div class="panel-heading compact-heading"><div><div class="panel-kicker">MISSION DIRECTIVE</div><h3>Objectives</h3></div><span class="objective-count" id="objectiveCount">0/3</span></div>
+          <div id="objectiveList" class="objective-list"></div>
+          <div class="threat-meter"><div class="meter-heading"><span>TRACE EXPOSURE</span><strong id="threatLabel">0 / 38</strong></div><div class="meter-track"><div id="threatFill" class="meter-fill"></div></div><div class="meter-note" id="threatNote">Keep your trace below the mission limit.</div></div>
+        </article>
+
+        <article class="panel loadout-panel">
+          <div class="panel-heading compact-heading"><div><div class="panel-kicker">RESOURCE OPTIMIZER</div><h3>Data loadout</h3></div><span class="algorithm-tag violet-tag">0/1 KNAPSACK</span></div>
+          <p class="panel-hint">Select the packets worth extracting. Each packet is indivisible and consumes capacity.</p>
+          <div class="loadout-table-head"><span>DATA PACKET</span><span>WEIGHT</span><span>VALUE</span></div>
+          <div id="itemList" class="item-list"></div>
+          <div class="knapsack-summary">
+            <div><small>SELECTED VALUE</small><strong id="itemValue">0</strong></div>
+            <div><small>CAPACITY USED</small><strong id="itemWeight">0 / 6</strong></div>
+            <div><small>REMAINING</small><strong id="itemRemaining">6</strong></div>
+          </div>
+          <div class="capacity-track"><div id="loadoutFill" class="capacity-fill"></div></div>
+          <div id="knapsackMessage" class="knapsack-message">Run the optimizer to find the best-value combination.</div>
+          <div class="loadout-actions"><button id="optimizeButton" class="button button-outline">✦ OPTIMIZE</button><button id="applyButton" class="button button-primary" disabled>DEPLOY LOADOUT <b>↗</b></button></div>
+        </article>
+
+        <article class="panel controls-panel">
+          <div class="panel-heading compact-heading"><div><div class="panel-kicker">FIELD CONTROLS</div><h3>Movement</h3></div><span class="control-indicator" id="controlIndicator">STANDBY</span></div>
+          <div class="transport-controls">
+            <button id="playButton" class="control-button control-play" disabled><span>▶</span> PLAY</button>
+            <button id="pauseButton" class="control-button" disabled><span>Ⅱ</span> PAUSE</button>
+            <button id="stepButton" class="control-button" disabled><span>→|</span> STEP</button>
+            <button id="resetButton" class="control-button" disabled><span>↺</span> RESET ROUTE</button>
+          </div>
+          <div class="secondary-controls"><button id="restartButton" class="text-button">↻ RESTART MISSION</button><button id="nextButton" class="text-button next-button" disabled>NEXT LEVEL ↗</button></div>
+        </article>
+      </aside>
+    </section>
+
+    <footer class="game-footer"><span>CYBER HEIST <b>/</b> ANALYSIS OF ALGORITHMS</span><span>LOCAL SESSION <i class="footer-live-dot"></i></span><span id="footerHint">Awaiting operative deployment</span></footer>
+  </main>
+
+  <section id="resultOverlay" class="result-overlay" hidden aria-live="polite">
+    <div class="result-card">
+      <div class="result-symbol" id="resultSymbol">✓</div>
+      <div class="result-kicker" id="resultKicker">OPERATION COMPLETE</div>
+      <h2 id="resultTitle">Vault accessed</h2>
+      <p id="resultDescription">Your extraction was successful.</p>
+      <div class="result-stats"><div><small>MISSION SCORE</small><strong id="resultScore">0000</strong></div><div><small>TRACE LEVEL</small><strong id="resultThreat">0%</strong></div><div><small>DATA VALUE</small><strong id="resultValue">0</strong></div></div>
+      <div class="result-actions"><button id="resultRestartButton" class="button button-outline">REPLAY MISSION</button><button id="resultNextButton" class="button button-primary">NEXT LEVEL ↗</button></div>
+    </div>
+  </section>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="algorithms.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
